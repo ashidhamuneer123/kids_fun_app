@@ -73,10 +73,13 @@ const QuizGame = ({ category, questions }) => {
                 if (answerStatus) {
                   if (answerStatus.selectedAnswer === option) {
                     buttonClass = answerStatus.isCorrect
-                      ? 'bg-green-500 text-white py-3 px-6 rounded-lg transition-all w-full'
+                      ? 'bg-green-600 text-white py-3 px-6 rounded-lg transition-all w-full'
                       : 'bg-red-500 text-white py-3 px-6 rounded-lg transition-all w-full';
                   } else if (answerStatus.correctAnswer === option) {
-                    buttonClass = 'bg-green-500 text-white py-3 px-6 rounded-lg transition-all w-full';
+                    buttonClass = 'bg-green-600 text-white py-3 px-6 rounded-lg transition-all w-full';
+                  } else {
+                    // Set button back to a slightly darker blue after the answer is clicked
+                    buttonClass = 'bg-blue-400 text-white py-3 px-6 rounded-lg transition-all w-full';
                   }
                 }
 
