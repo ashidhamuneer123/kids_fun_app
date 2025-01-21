@@ -43,6 +43,15 @@ const QuizGame = ({ category, questions }) => {
     }
   };
 
+  const restartQuiz = () => {
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setQuizFinished(false);
+    setAnswerStatus(null);
+    const shuffled = shuffleArray(questions);
+    setShuffledQuestions(shuffled.slice(0, 10)); // Restart the quiz with shuffled questions
+  };
+
   if (shuffledQuestions.length === 0) {
     return <p>Loading...</p>;
   }
@@ -97,7 +106,7 @@ const QuizGame = ({ category, questions }) => {
             <div className="mt-6">
               <button
                 className="bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none"
-                onClick={() => window.location.reload()}
+                onClick={restartQuiz} // Call restartQuiz instead of window.location.reload
               >
                 Restart Quiz
               </button>
