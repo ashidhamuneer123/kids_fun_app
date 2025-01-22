@@ -12,7 +12,7 @@ const Quiz = () => {
         { id: 'sports', name: 'Sports' },
         { id: 'mathematics', name: 'Mathematics' },
         { id: 'computer', name: 'Computer' },
-        {id:'english_quiz',name:'English'}
+        {id:'english',name:'English'}
     ];
 
     const handleCategoryClick = (categoryId) => {

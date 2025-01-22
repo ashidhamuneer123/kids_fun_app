@@ -39,7 +39,10 @@ const QuizGame = ({ category, questions }) => {
         setAnswerStatus(null); // Reset answer status for next question
       }, 1000); // Wait for a second before switching to the next question
     } else {
-      setQuizFinished(true);
+      // Delay the quiz finish state to show the feedback for the last question
+      setTimeout(() => {
+        setQuizFinished(true);
+      }, 1000); // Wait for a second before showing the final score
     }
   };
 
@@ -77,9 +80,6 @@ const QuizGame = ({ category, questions }) => {
                       : 'bg-red-500 text-white py-3 px-6 rounded-lg transition-all w-full';
                   } else if (answerStatus.correctAnswer === option) {
                     buttonClass = 'bg-green-600 text-white py-3 px-6 rounded-lg transition-all w-full';
-                  } else {
-                    // Set button back to  blue after the answer is clicked
-                    buttonClass = 'bg-blue-500 text-white py-3 px-6 rounded-lg transition-all w-full';
                   }
                 }
 

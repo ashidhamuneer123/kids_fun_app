@@ -175,7 +175,7 @@ export const quizData = {
         // Add more questions up to 50
 
     ],
-    english_quiz: [
+    english: [
       { question: "Which word is correct? I saw ___ cat.", options: ["a", "an", "the", "none"], correctAnswer: "a" },
       { question: "Which word is correct? She has ___ apple.", options: ["a", "an", "the", "none"], correctAnswer: "an" },
       { question: "What is the plural of 'child'?", options: ["childs", "children", "childes", "childs'"], correctAnswer: "children" },
