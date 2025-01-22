@@ -11,7 +11,15 @@ export const quizData = {
         { question: "What is the name of the bear who loves honey?", options: ["Winnie the Pooh", "Paddington", "Yogi Bear", "Baloo"], correctAnswer: "Winnie the Pooh" },
         { question: "Which fruit is yellow and curved?", options: ["Apple", "Banana", "Orange", "Grapes"], correctAnswer: "Banana" },
         { question: "Which planet is closest to the sun?", options: ["Earth", "Mars", "Mercury", "Venus"], correctAnswer: "Mercury" },
-        // Add more questions up to 50
+        { question: "What is the capital of Japan?", options: ["Tokyo", "Beijing", "Seoul", "Bangkok"], correctAnswer: "Tokyo" },
+        { question: "Who is the main character in Peter Pan?", options: ["Harry Potter", "Peter Pan", "Winnie the Pooh", "Cinderella"], correctAnswer: "Peter Pan" },
+        { question: "What color are most leaves on trees?", options: ["Red", "Yellow", "Green", "Blue"], correctAnswer: "Green" },
+        { question: "Which animal is known for its black and white stripes?", options: ["Zebra", "Lion", "Elephant", "Giraffe"], correctAnswer: "Zebra" },
+        { question: "How many months are in a year?", options: ["10", "12", "14", "24"], correctAnswer: "12" },
+        { question: "What is 3 + 4?", options: ["5", "6", "7", "8"], correctAnswer: "7" },
+        { question: "What shape has 3 sides?", options: ["Square", "Triangle", "Circle", "Rectangle"], correctAnswer: "Triangle" },
+        { question: "What is the name of the fish in Finding Nemo?", options: ["Nemo", "Dory", "Marlin", "Squirt"], correctAnswer: "Nemo" },
+        { question: "Which fruit is red and has seeds on the outside?", options: ["Strawberry", "Apple", "Cherry", "Peach"], correctAnswer: "Strawberry" },
     ],
     science: [
         { question: "What is the chemical symbol for water?", options: ["O2", "H2O", "CO2", "H2"], correctAnswer: "H2O" },
@@ -24,6 +32,16 @@ export const quizData = {
         { question: "What part of the plant takes in sunlight?", options: ["Roots", "Stem", "Leaves", "Flowers"], correctAnswer: "Leaves" },
         { question: "Which animal can live both in water and on land?", options: ["Fish", "Lion", "Frog", "Tiger"], correctAnswer: "Frog" },
         { question: "How many planets are in the solar system?", options: ["5", "7", "8", "9"], correctAnswer: "8" },
+        { question: "What gas do plants need to make food?", options: ["Oxygen", "Carbon Dioxide", "Hydrogen", "Nitrogen"], correctAnswer: "Carbon Dioxide" },
+    { question: "What is the boiling point of water?", options: ["100°F", "100°C", "50°C", "0°C"], correctAnswer: "100°C" },
+    { question: "Which part of the body pumps blood?", options: ["Brain", "Lungs", "Heart", "Stomach"], correctAnswer: "Heart" },
+    { question: "What is the largest planet in our solar system?", options: ["Earth", "Saturn", "Jupiter", "Mars"], correctAnswer: "Jupiter" },
+    { question: "What animal is known for its long neck?", options: ["Giraffe", "Elephant", "Kangaroo", "Tiger"], correctAnswer: "Giraffe" },
+    { question: "What is the name of the closest star to Earth?", options: ["The Sun", "Alpha Centauri", "Sirius", "Betelgeuse"], correctAnswer: "The Sun" },
+    { question: "Which planet is known as the Blue Planet?", options: ["Earth", "Neptune", "Mars", "Uranus"], correctAnswer: "Earth" },
+    { question: "What is the process by which plants make their food?", options: ["Photosynthesis", "Digestion", "Respiration", "Reproduction"], correctAnswer: "Photosynthesis" },
+    { question: "What do we call the force that pulls things towards the Earth?", options: ["Magnetism", "Gravity", "Friction", "Wind"], correctAnswer: "Gravity" },
+    { question: "What is the main ingredient in the air that we breathe?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], correctAnswer: "Oxygen" }
         // Add more questions up to 50
     ],
     sports: [
@@ -80,6 +98,56 @@ export const quizData = {
         { question: "What is the value of 5 + 2?", options: ["6", "7", "8", "9"], correctAnswer: "7" },
         { question: "What is 9 - 4?", options: ["3", "5", "6", "7"], correctAnswer: "5" },
         { question: "What is 12 ÷ 3?", options: ["3", "4", "5", "6"], correctAnswer: "4" },
+        { 
+            question: "What is the smallest two-digit number?", 
+            options: ["9", "10", "11", "12"], 
+            correctAnswer: "10" 
+          },
+          { 
+            question: "What is 15 - 5?", 
+            options: ["10", "9", "11", "12"], 
+            correctAnswer: "10" 
+          },
+          { 
+            question: "How many minutes are there in one hour?", 
+            options: ["30", "60", "90", "120"], 
+            correctAnswer: "60" 
+          },
+          { 
+            question: "What is the value of 7 * 3?", 
+            options: ["20", "21", "18", "24"], 
+            correctAnswer: "21" 
+          },
+          { 
+            question: "What is half of 20?", 
+            options: ["5", "10", "15", "20"], 
+            correctAnswer: "10" 
+          },
+          { 
+            question: "What is the number after 49?", 
+            options: ["48", "50", "51", "52"], 
+            correctAnswer: "50" 
+          },
+          { 
+            question: "How many sides does a square have?", 
+            options: ["3", "4", "5", "6"], 
+            correctAnswer: "4" 
+          },
+          { 
+            question: "What is 6 ÷ 2?", 
+            options: ["2", "3", "4", "5"], 
+            correctAnswer: "3" 
+          },
+          { 
+            question: "What is 8 + 2?", 
+            options: ["9", "10", "11", "12"], 
+            correctAnswer: "10" 
+          },
+          { 
+            question: "What is 100 - 50?", 
+            options: ["40", "50", "60", "70"], 
+            correctAnswer: "50" 
+          }
         // Add more questions up to 50
     ],
     computer: [
@@ -93,6 +161,18 @@ export const quizData = {
         { question: "What is the main programming language for creating websites?", options: ["Python", "Java", "JavaScript", "C++"], correctAnswer: "JavaScript" },
         { question: "Which of these is a type of computer?", options: ["Car", "Tablet", "Chair", "Phone"], correctAnswer: "Tablet" },
         { question: "What is the name of the popular search engine?", options: ["Yahoo", "Google", "Bing", "DuckDuckGo"], correctAnswer: "Google" },
+
+    { question: "What does Wi-Fi stand for?", options: ["Wireless Fidelity", "Wireless Frequency", "World Internet", "Web Finder"], correctAnswer: "Wireless Fidelity" },
+    { question: "Which of these is used to print on paper?", options: ["Scanner", "Printer", "Keyboard", "Mouse"], correctAnswer: "Printer" },
+    { question: "What is an email?", options: ["A type of phone", "An electronic letter", "A website", "A computer part"], correctAnswer: "An electronic letter" },
+    { question: "What is a website?", options: ["A type of computer", "A place you can visit on the internet", "A phone", "A computer game"], correctAnswer: "A place you can visit on the internet" },
+    { question: "What do you call the small pictures you click on a website?", options: ["Buttons", "Links", "Words", "Numbers"], correctAnswer: "Links" },
+    { question: "Which device do you use to hear sound on a computer?", options: ["Speaker", "Microphone", "Monitor", "Keyboard"], correctAnswer: "Speaker" },
+    { question: "Which part of the computer helps you to see pictures and videos?", options: ["Monitor", "Keyboard", "CPU", "Mouse"], correctAnswer: "Monitor" },
+    { question: "What is a robot?", options: ["A person", "A machine that can do tasks", "A computer", "A toy"], correctAnswer: "A machine that can do tasks" },
+    { question: "What is the main purpose of the internet?", options: ["To play games", "To chat with friends", "To connect computers and share information", "To watch TV"], correctAnswer: "To connect computers and share information" },
+    { question: "What do we call a device that you can carry around and use to make calls?", options: ["Tablet", "Laptop", "Phone", "Computer"], correctAnswer: "Phone" }
         // Add more questions up to 50
+
     ],
 };
