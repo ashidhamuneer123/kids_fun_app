@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Puzzle from './pages/Puzzle';
+import PuzzleGame from './pages/PuzzleGame';
 import { Routes, Route } from 'react-router-dom';
 import Footer from "./components/Footer";
 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/puzzle" element={<Puzzle />} />
+          <Route path="/puzzle-game/:category/:puzzleName" component={PuzzleGame} />
         </Routes>
       </main>
       <Footer />

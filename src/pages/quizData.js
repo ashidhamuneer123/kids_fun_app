@@ -175,4 +175,27 @@ export const quizData = {
         // Add more questions up to 50
 
     ],
+    english_quiz: [
+      { question: "Which word is correct? I saw ___ cat.", options: ["a", "an", "the", "none"], correctAnswer: "a" },
+      { question: "Which word is correct? She has ___ apple.", options: ["a", "an", "the", "none"], correctAnswer: "an" },
+      { question: "What is the plural of 'child'?", options: ["childs", "children", "childes", "childs'"], correctAnswer: "children" },
+      { question: "Which of these is an adjective?", options: ["quickly", "happy", "run", "the"], correctAnswer: "happy" },
+      { question: "Which sentence is correct?", options: ["She is more smarter", "She is smarter", "She is most smarter", "She is smartest"], correctAnswer: "She is smarter" },
+      { question: "What is the opposite of 'big'?", options: ["small", "tall", "fast", "long"], correctAnswer: "small" },
+      { question: "Choose the correct preposition: The book is ___ the table.", options: ["on", "in", "under", "next"], correctAnswer: "on" },
+      { question: "Which sentence uses 'a' correctly?", options: ["I have a dog.", "I have an dog.", "I have the dog.", "I have dog."], correctAnswer: "I have a dog." },
+      { question: "Which sentence uses 'an' correctly?", options: ["I saw a elephant.", "I saw an elephant.", "I saw the elephant.", "I saw elephant."], correctAnswer: "I saw an elephant." },
+      { question: "Which is a verb?", options: ["run", "blue", "quickly", "soft"], correctAnswer: "run" },
+      { question: "Choose the correct preposition: The cat is ___ the chair.", options: ["on", "under", "in", "above"], correctAnswer: "under" },
+      { question: "What is the opposite of 'fast'?", options: ["slow", "quick", "long", "tall"], correctAnswer: "slow" },
+      { question: "Which of these is a noun?", options: ["walk", "happily", "dog", "swim"], correctAnswer: "dog" },
+      { question: "Which word completes this sentence? He is ___ student.", options: ["a", "an", "the", "none"], correctAnswer: "a" },
+      { question: "Choose the correct sentence.", options: ["She are happy.", "She is happy.", "She be happy.", "She am happy."], correctAnswer: "She is happy." },
+      { question: "Which is the correct word? I ___ going to the park.", options: ["is", "am", "are", "be"], correctAnswer: "am" },
+      { question: "What is the past tense of 'eat'?", options: ["ate", "eats", "eaten", "eating"], correctAnswer: "ate" },
+      { question: "Which word is a preposition?", options: ["under", "happy", "run", "big"], correctAnswer: "under" },
+      { question: "Which sentence is correct?", options: ["They is playing.", "They are playing.", "They be playing.", "They am playing."], correctAnswer: "They are playing." },
+      { question: "Choose the correct word: The cat is ___ the box.", options: ["on", "in", "under", "next"], correctAnswer: "in" }
+  ]
+  
 };
