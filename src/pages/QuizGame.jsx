@@ -78,8 +78,8 @@ const QuizGame = ({ category, questions }) => {
                   } else if (answerStatus.correctAnswer === option) {
                     buttonClass = 'bg-green-600 text-white py-3 px-6 rounded-lg transition-all w-full';
                   } else {
-                    // Set button back to a slightly darker blue after the answer is clicked
-                    buttonClass = 'bg-blue-400 text-white py-3 px-6 rounded-lg transition-all w-full';
+                    // Set button back to  blue after the answer is clicked
+                    buttonClass = 'bg-blue-500 text-white py-3 px-6 rounded-lg transition-all w-full';
                   }
                 }
 

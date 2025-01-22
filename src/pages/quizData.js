@@ -37,6 +37,36 @@ export const quizData = {
         { question: "In which sport do you wear skates?", options: ["Basketball", "Ice Hockey", "Cycling", "Football"], correctAnswer: "Ice Hockey" },
         { question: "What is the term used in football for a touchdown?", options: ["Goal", "Touch", "Score", "Try"], correctAnswer: "Touch" },
         { question: "Which animal races in the Kentucky Derby?", options: ["Horse", "Elephant", "Dog", "Camel"], correctAnswer: "Horse" },
+        { 
+            question: "Which sport is played on a diamond-shaped field?", 
+            options: ["Baseball", "Cricket", "Hockey", "Golf"], 
+            correctAnswer: "Baseball" 
+          },
+          { 
+            question: "In swimming, what stroke is named after a flying insect?", 
+            options: ["Freestyle", "Butterfly", "Backstroke", "Breaststroke"], 
+            correctAnswer: "Butterfly" 
+          },
+          { 
+            question: "What is the term for scoring 3 goals in a soccer game?", 
+            options: ["Double", "Hat-trick", "Triple", "Home Run"], 
+            correctAnswer: "Hat-trick" 
+          },
+          { 
+            question: "Which sport uses a long stick with a net to catch a ball?", 
+            options: ["Lacrosse", "Hockey", "Golf", "Baseball"], 
+            correctAnswer: "Lacrosse" 
+          },
+          { 
+            question: "In tennis, what is the score called when both players have 40 points?", 
+            options: ["Deuce", "Match Point", "Advantage", "Game"], 
+            correctAnswer: "Deuce" 
+          },
+          { 
+            question: "Which sport has positions called 'goalkeeper' and 'defender'?", 
+            options: ["Soccer", "Basketball", "Baseball", "Tennis"], 
+            correctAnswer: "Soccer" 
+          }
         // Add more questions up to 50
     ],
     mathematics: [
