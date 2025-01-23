@@ -73,16 +73,16 @@ const MemoryGame = () => {
   return (
     <div className="text-center py-12">
       <h1 className="text-3xl font-bold text-teal-600 mb-6">Memory Game</h1>
-      <div className="grid grid-cols-4 gap-4 mt-6 max-w-md mx-auto">
+      <div className="grid grid-cols-4 gap-2 sm:gap-4 mt-6 max-w-xs sm:max-w-md mx-auto">
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`w-20 h-20 bg-gray-600 rounded-lg flex items-center justify-center cursor-pointer
+            className={`w-16 h-16 sm:w-20 sm:h-20 bg-gray-600 rounded-lg flex items-center justify-center cursor-pointer
               ${flippedIndices.includes(index) || disappearedCards.includes(index) ? 'bg-white' : 'bg-gray-300'}`}
             onClick={() => handleCardClick(index)}
           >
             {(flippedIndices.includes(index) || disappearedCards.includes(index)) && (
-              <span className="text-xl font-bold text-black">{card}</span>
+              <span className="text-lg sm:text-xl font-bold text-black">{card}</span>
             )}
           </div>
         ))}
