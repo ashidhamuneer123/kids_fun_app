@@ -52,7 +52,7 @@ const TicTacToe = () => {
         {board.map((cell, index) => (
           <div
             key={index}
-            className={`w-20 h-20 flex items-center justify-center bg-gray-800 rounded-md text-2xl font-bold cursor-pointer ${
+            className={`w-20 h-20 flex items-center justify-center bg-gray-500 rounded-md text-2xl font-bold cursor-pointer ${
               cell ? 'cursor-not-allowed' : ''
             }`}
             onClick={() => handleClick(index)}
