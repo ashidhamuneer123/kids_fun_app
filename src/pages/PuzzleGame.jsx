@@ -1,28 +1,43 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
-
+import { useParams, useNavigate } from 'react-router-dom';
+import TicTacToe from '../games/TicTacToe';
 const PuzzleGame = () => {
-  const { category, puzzleName } = useParams(); // Retrieve category and puzzle from URL params
-  const navigate = useNavigate(); // Initialize useNavigate
+  const { gameId } = useParams();
+  const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate('/puzzle'); // Navigate back to the puzzle categories page
+    navigate('/puzzle'); // Navigate back to the puzzle selection page
+  };
+
+  // Render game content dynamically based on gameId
+  const renderGame = () => {
+    switch (gameId) {
+      case 'tic-tac-toe':
+        return <TicTacToe />;
+      case 'memory-game':
+        return <div className="text-gray-800 text-xl mt-4">Memory Game Coming Soon!</div>;
+      case 'jigsaw-puzzle':
+        return <div className="text-gray-800 text-xl mt-4">Jigsaw Puzzle Coming Soon!</div>;
+      case 'pokemon-puzzle':
+        return <div className="text-gray-800 text-xl mt-4">Pokemon Puzzle Card Game Coming Soon!</div>;
+      default:
+        return <div className="text-red-500 text-xl mt-4">Game not found!</div>;
+    }
   };
 
   return (
     <div className="text-center py-12">
-      <h1 className="text-3xl font-bold text-blue-500">{category} - {puzzleName}</h1>
-      <p className="text-lg text-white mt-4">
-        Game content for {puzzleName} goes here.
-      </p>
-
-      {/* Add puzzle game logic here */}
-      <div className="mt-6">
+      <div className="w-full max-w-3xl bg-white rounded-lg shadow-lg p-6 mt-6 mx-auto">
+        <h1 className="text-3xl font-bold text-blue-600 capitalize">
+          {gameId.replace(/-/g, ' ')}
+        </h1>
+        <div className="mt-6">{renderGame()}</div>
         <button
           onClick={handleBack}
-          className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-all"
+          className="mt-6 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-all"
+          style={{ width: '200px' }}
         >
-          Back to Puzzles
+          Back to Games
         </button>
       </div>
     </div>

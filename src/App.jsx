@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/puzzle" element={<Puzzle />} />
-          <Route path="/puzzle-game/:category/:puzzleName" component={PuzzleGame} />
+          <Route path="/puzzle-game/:gameId" element={<PuzzleGame />} />
         </Routes>
       </main>
       <Footer />
