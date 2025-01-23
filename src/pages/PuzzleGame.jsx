@@ -19,8 +19,8 @@ const PuzzleGame = () => {
         return <MemoryGame/>
       case 'jigsaw-puzzle':
         return <div className="text-gray-800 text-xl mt-4">Jigsaw Puzzle Coming Soon!</div>;
-      case 'pokemon-puzzle':
-        return <div className="text-gray-800 text-xl mt-4">Pokemon Puzzle Card Game Coming Soon!</div>;
+      case 'number-puzzle':
+        return <div className="text-gray-800 text-xl mt-4">Number Puzzle Coming Soon!</div>;
       default:
         return <div className="text-red-500 text-xl mt-4">Game not found!</div>;
     }

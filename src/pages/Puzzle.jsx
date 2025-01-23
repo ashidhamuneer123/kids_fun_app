@@ -9,7 +9,7 @@ const Puzzle = () => {
     { id: 'tic-tac-toe', name: 'Tic Tac Toe' },
     { id: 'memory-game', name: 'Memory Game' },
     { id: 'jigsaw-puzzle', name: 'Jigsaw Puzzle' },
-    { id: 'pokemon-puzzle', name: 'Pokemon Puzzle' },
+    { id: 'number-puzzle', name: 'Number Puzzle' },
   ];
 
   const handleGameClick = (gameId) => {
