@@ -81,8 +81,12 @@ const MemoryGame = () => {
   };
 
   return (
-    <div className="text-center py-12">
+    <div className="text-center py-12 bg-yellow-400">
       <h1 className="text-3xl font-bold text-teal-600 mb-6">Memory Game</h1>
+      <p className="text-sm text-gray-500 mb-6 max-w-lg mx-auto">
+        Match all the pairs of cards to win the game! Click on two tiles to reveal them. 
+        If they match, they stay revealed. Try to match all pairs in the shortest time possible.
+      </p>
       <div className="grid grid-cols-4 gap-2 sm:gap-4 mt-6 max-w-xs sm:max-w-md mx-auto">
         {cards.map((card, index) => (
           <div

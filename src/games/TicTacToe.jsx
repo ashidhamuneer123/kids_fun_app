@@ -42,8 +42,12 @@ const TicTacToe = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
-      <h1 className="text-3xl font-bold text-green-400 mb-6">Tic Tac Toe</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-yellow-400 text-black">
+      <h1 className="text-3xl font-bold text-teal-600 mb-6">Tic Tac Toe</h1>
+      <p className="text-sm text-gray-500 mb-6 max-w-lg mx-auto">
+        Play against a friend in this classic game of Tic Tac Toe! Take turns to mark X or O on the grid. 
+        The first player to align three marks in a row, column, or diagonal wins the game. Good luck!
+      </p>
       <div className="grid grid-cols-3 gap-2 w-64">
         {board.map((cell, index) => (
           <div
