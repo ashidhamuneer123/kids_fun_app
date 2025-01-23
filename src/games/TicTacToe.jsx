@@ -61,11 +61,11 @@ const TicTacToe = () => {
           </div>
         ))}
       </div>
-      {winner && (
-        <p className="text-2xl text-red-400 mt-4">Winner: {winner}</p>
+      {winner && !isDraw && (
+        <p className="text-2xl text-red-400 mt-4">🎉 Winner: {winner} 🎉</p>
       )}
       {isDraw && !winner && (
-        <p className="text-2xl text-yellow-400 mt-4">It's a draw!</p>
+        <p className="text-2xl text-red-400 mt-4">It's a draw! 🤝</p>
       )}
       <div className="mt-6 space-x-4">
         <button
