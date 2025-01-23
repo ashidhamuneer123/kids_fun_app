@@ -13,62 +13,72 @@ const MemoryGame = () => {
   const [cards, setCards] = useState([]);
   const [flippedIndices, setFlippedIndices] = useState([]);
   const [matchedPairs, setMatchedPairs] = useState(0);
-  const [disappearedCards, setDisappearedCards] = useState([]);
-  const [timeElapsed, setTimeElapsed] = useState(0); // Timer state
-  const [gameStarted, setGameStarted] = useState(false); // To track if game has started
+  const [matchedIndices, setMatchedIndices] = useState([]);
+  const [timeElapsed, setTimeElapsed] = useState(0);
+  const [gameStarted, setGameStarted] = useState(false);
+  const [gameWon, setGameWon] = useState(false); // State to handle game win
 
-  const cardValues = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']; // Expanded card values for 6x2 grid
-  const initialCards = [...cardValues, ...cardValues]; // Duplicate for pairs
+  const cardValues = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
+  const initialCards = [...cardValues, ...cardValues];
 
-  // Shuffle and initialize cards when the game starts
   useEffect(() => {
     const shuffledCards = shuffleArray(initialCards);
     setCards(shuffledCards);
   }, []);
 
-  // Timer function
   useEffect(() => {
     let interval;
-    if (gameStarted && matchedPairs < cardValues.length) {
+    if (gameStarted && !gameWon) {
       interval = setInterval(() => {
         setTimeElapsed((prevTime) => prevTime + 1);
-      }, 1000); // Increment every second
-    } else {
-      clearInterval(interval); // Stop timer if the game is finished
+      }, 1000);
     }
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [gameStarted, matchedPairs]);
+    return () => clearInterval(interval);
+  }, [gameStarted, gameWon]);
 
-  // Handle card flip
   const handleCardClick = (index) => {
-    if (!gameStarted) setGameStarted(true); // Start the game when the first card is flipped
-    if (flippedIndices.length === 2 || flippedIndices.includes(index) || disappearedCards.includes(index)) return; // Avoid flipping more than two cards at once or already disappeared cards
+    if (!gameStarted) setGameStarted(true);
+    if (flippedIndices.length === 2 || flippedIndices.includes(index) || matchedIndices.includes(index)) return;
 
     setFlippedIndices((prevIndices) => [...prevIndices, index]);
 
-    // If two cards are flipped, check if they match
     if (flippedIndices.length === 1) {
       const firstCard = cards[flippedIndices[0]];
       const secondCard = cards[index];
 
       if (firstCard === secondCard) {
-        setMatchedPairs((prev) => prev + 1); // Increment matched pairs
-        setDisappearedCards((prev) => [...prev, flippedIndices[0], index]); // Mark matched cards as disappeared
+        setMatchedPairs((prev) => prev + 1);
+        setMatchedIndices((prev) => [...prev, flippedIndices[0], index]);
       }
 
-      // Reset flippedIndices after a short delay
       setTimeout(() => {
         setFlippedIndices([]);
       }, 1000);
     }
   };
 
-  // Check if game is won
   useEffect(() => {
     if (matchedPairs === cardValues.length) {
-      alert(`Congratulations! You won the game in ${timeElapsed} seconds!`);
+      setGameWon(true); // Trigger game win modal
     }
-  }, [matchedPairs, timeElapsed]);
+  }, [matchedPairs]);
+
+  const resetGame = () => {
+    setMatchedPairs(0);
+    setMatchedIndices([]);
+    setFlippedIndices([]);
+    setTimeElapsed(0);
+    setGameStarted(false);
+    setGameWon(false);
+    setCards(shuffleArray(initialCards)); // Reset and shuffle cards
+  };
+
+  // Helper function to format time
+  const formatTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins > 0 ? `${mins} minute${mins > 1 ? 's' : ''} ` : ''}${secs} second${secs !== 1 ? 's' : ''}`;
+  };
 
   return (
     <div className="text-center py-12">
@@ -77,11 +87,11 @@ const MemoryGame = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`w-16 h-16 sm:w-20 sm:h-20 bg-gray-600 rounded-lg flex items-center justify-center cursor-pointer
-              ${flippedIndices.includes(index) || disappearedCards.includes(index) ? 'bg-white' : 'bg-gray-300'}`}
+            className={`w-16 h-16 sm:w-20 sm:h-20 rounded-lg flex items-center justify-center cursor-pointer
+              ${matchedIndices.includes(index) ? 'bg-green-500' : flippedIndices.includes(index) ? 'bg-gray-300' : 'bg-gray-500'}`}
             onClick={() => handleCardClick(index)}
           >
-            {(flippedIndices.includes(index) || disappearedCards.includes(index)) && (
+            {(flippedIndices.includes(index) || matchedIndices.includes(index)) && (
               <span className="text-lg sm:text-xl font-bold text-black">{card}</span>
             )}
           </div>
@@ -89,9 +99,24 @@ const MemoryGame = () => {
       </div>
 
       <p className="mt-6 text-lg text-teal-600">Matched Pairs: {matchedPairs} / {cardValues.length}</p>
-      
-      {/* Display Time */}
-      <p className="mt-4 text-xl text-teal-600">Time Taken: {timeElapsed} seconds</p>
+      <p className="mt-4 text-xl text-teal-600">Time Taken: {formatTime(timeElapsed)}</p>
+
+      {gameWon && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm text-center">
+            <h2 className="text-2xl font-bold text-teal-600 mb-4">🎉 Congratulations! 🎉</h2>
+            <p className="text-lg mb-4">
+              You completed the game in <strong>{formatTime(timeElapsed)}</strong>!
+            </p>
+            <button
+              onClick={resetGame}
+              className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition"
+            >
+              Play Again
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
